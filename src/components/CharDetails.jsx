@@ -1,3 +1,5 @@
+import { getLastNumberFromUrl } from '../util/logic'
+
 export const CharDetails = ({ data }) => {
   return (
     <>
@@ -23,9 +25,24 @@ export const CharDetails = ({ data }) => {
                 <strong>Location: </strong>
                 {data.location.name}
               </p>
-              <p>
-                <strong>Episodes: </strong>
-              </p>
+              {data.episode.length > 0 && (
+                <p>
+                  <strong>
+                    Episodes:{' '}
+                    {data.episode.map((url) => {
+                      return (
+                        <span
+                          className='char-modal-episode'
+                          key={`${getLastNumberFromUrl(url)}-ep`}
+                        >
+                          {getLastNumberFromUrl(url)}-
+                        </span>
+                      )
+                    })}
+                    ...
+                  </strong>
+                </p>
+              )}
             </div>
           </div>
         </div>

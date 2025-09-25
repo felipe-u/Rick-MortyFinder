@@ -113,6 +113,7 @@ section {
   color: black;
   padding: 10px;
   border-radius: 20px;
+  max-width: 470px;
 }
 
 .char-modal h2 {
@@ -133,8 +134,13 @@ section {
 
 .char-modal-info {
   text-align: left;
-  width: 200px;
+  width: 100%;
   line-height: 2;
+}
+
+.char-modal-episode {
+  display: inline-block;
+  padding-left: 2px;
 }
 
 /*LOADER*/
